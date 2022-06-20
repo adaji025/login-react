@@ -1,10 +1,14 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useContext } from "react";
+import axios from "../api/axios";
+import AuthContext from "../context/AuthProvider";
 
 const Login = () => {
   const [user, setUser] = useState("");
   const [pwd, setPwd] = useState("");
   const [errMsg, setErrMsg] = useState("");
   const [success, setSuccess] = useState("");
+  
+  const { setAuth } = useContext(AuthContext)
 
   const userRef = useRef();
   const errRef = useRef();
